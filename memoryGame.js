@@ -13,12 +13,12 @@ const prompt = require("prompt-sync")(); // Didn't realize I needed to npm i the
 const generateRandomWord = () => {
     const wordBank =[
         "apple", "banana", "orange", "grape", "kiwi", "strawberry", "melon", "pineapple", "blueberry", "mango",
-        "cat", "dog", "rabbit", "hamster", "fish", "bird", "turtle", "snake", "lizard", "frog",
-        "car", "bicycle", "motorcycle", "truck", "bus", "train", "airplane", "boat", "submarine", "helicopter",
-        "house", "apartment", "castle", "cabin", "tent", "igloo", "hut", "mansion", "palace", "treehouse",
-        "book", "magazine", "newspaper", "notebook", "dictionary", "encyclopedia", "novel", "comic", "journal", "catalog",
-        "computer", "phone", "tablet", "laptop", "keyboard", "mouse", "monitor", "printer", "router", "speaker",
-        "table", "chair", "couch", "bed", "desk", "dresser", "nightstand", "bookshelf", "cabinet", "lamp"
+        // "cat", "dog", "rabbit", "hamster", "fish", "bird", "turtle", "snake", "lizard", "frog",
+        // "car", "bicycle", "motorcycle", "truck", "bus", "train", "airplane", "boat", "submarine", "helicopter",
+        // "house", "apartment", "castle", "cabin", "tent", "igloo", "hut", "mansion", "palace", "treehouse",
+        // "book", "magazine", "newspaper", "notebook", "dictionary", "encyclopedia", "novel", "comic", "journal", "catalog",
+        // "computer", "phone", "tablet", "laptop", "keyboard", "mouse", "monitor", "printer", "router", "speaker",
+        // "table", "chair", "couch", "bed", "desk", "dresser", "nightstand", "bookshelf", "cabinet", "lamp"
     ]
     // console.log(wordBank.at(5))
     var rand = wordBank[Math.random() * wordBank.length>>0]; //Not sure how or why this fixed it but it did! Godbless stackoverflow T_T
@@ -45,17 +45,20 @@ const game = () => {
 
     while(mistake < 3){
         activeWord = generateRandomWord();
-        seenWords.push(activeWord);
-        seenWords.includes(activeWord); // logic to check if word is new or not
+        seenWords.includes(activeWord); 
+        //seenWords.push(activeWord)
+        // logic to check if word is new or not
         const haveSeen = prompt('Is this a new word?(y/n): ');
         //logic to check if haveseen is correct  
-        if (seenWords.includes(activeWord) == true && haveSeen === "y" || haveSeen === "Y"){
+        if (seenWords.includes(activeWord) == false && haveSeen === "y" || haveSeen === "Y"){
             score += 1;
             console.log("Score: " + score);
+            seenWords.push(activeWord);
             continue;
-        } else if (seenWords.includes(activeWord) == false && haveSeen === "n" || haveSeen === 'N'){
+            
+        } else if (seenWords.includes(activeWord) == true && haveSeen === "n" || haveSeen === 'N'){
             score += 1;
-            console.log("Score: " + score);
+            console.log("Score : " + score);
             continue;
         } else{
             mistake += 1;

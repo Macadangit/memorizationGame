@@ -37,13 +37,34 @@ const game = () => {
     let activeWord = "";
     let seenWords = [];
 
-    while(mistake < 3){
-        seenWords.push(generateRandomWord());
-        console.log(seenWords)
 
+    // now realizing that part of the game is actually having repeating words... Not to say that the current
+    //function couldn't possibly cause that, but it won't do it as frequently as i'd like surely. 
+    // get everything working first and then you can change that.
+
+
+    while(mistake < 3){
+        activeWord = generateRandomWord();
+        seenWords.push(activeWord);
+        seenWords.includes(activeWord); // logic to check if word is new or not
         const haveSeen = prompt('Is this a new word?(y/n): ');
-        mistake += 1;
-        console.log(mistake)
+        //logic to check if haveseen is correct  
+        if (seenWords.includes(activeWord) == true && haveSeen === "y" || haveSeen === "Y"){
+            score += 1;
+            console.log("Score: " + score);
+            continue;
+        } else if (seenWords.includes(activeWord) == false && haveSeen === "n" || haveSeen === 'N'){
+            score += 1;
+            console.log("Score: " + score);
+            continue;
+        } else{
+            mistake += 1;
+            console.log("Mistakes: " + mistake);
+        }
+        // compare haveseen to the values returned above
+        //      what happens based on whether it is or not
+        //      got back to top
+ 
     }
 
         

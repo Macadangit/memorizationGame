@@ -23,6 +23,7 @@ const generateRandomWord = () => {
     // console.log(wordBank.at(5))
     var rand = wordBank[Math.random() * wordBank.length>>0]; //Not sure how or why this fixed it but it did! Godbless stackoverflow T_T
     console.log(rand);
+    return(rand);
 }
 
 // ==================================================================================
@@ -30,25 +31,53 @@ const generateRandomWord = () => {
 
 // // 2. Create game function
 
+const game = () => {
+    let score = 0; //init score
+    let mistake = 0;
+    let activeWord = "";
+    let seenWords = [];
+
+    while(mistake < 3){
+        seenWords.push(generateRandomWord());
+        console.log(seenWords)
+
+        const haveSeen = prompt('Is this a new word?(y/n): ');
+        mistake += 1;
+        console.log(mistake)
+    }
+
+        
+        
+        
+        
+        
+        
+        // generate a random word
+        //      ask user if they've seen it before
+        //          if word is new, 
+                //      add to array
+    //                  give user points
+                //      generate another random word
+            //      if word isn't new,
+            //          add mistake counter
+            //          generate another random word
+            //      if mistake counter < 3 --- keep playing
+            //
+    //entering the wrong selection more than three times returns false --- init a variable for counter
+
+    // used words need to be added to a list/array and game also needs to eval if word in list 
+}
+
+
 const input = prompt("Press ENTER to begin...");
     if(input == false){
-        const isReady = prompt("y/n?");
-        console.log(isReady);
-
+        const isReady = prompt("Welcome to the word memorization game. You will be shown a word one at a time. \nIf you've seen the word before, **do something**. If you haven't seen it before, **do something else**. \nDo you undertand?(y/n): ");
         if (isReady === 'y' || isReady === 'Y'){
-            console.log('this is where the game logic goes');
+            console.log("Okay! Here we go...");
+            game();
+        } else{
+            console.log("Goodbye.");
         }
-        // if (isReady == "y" || "Y"){
-        //     console.log('works until this point');
-        // } else{
-        //     console.log("see ya.")
-        // }
-
-        //     console.log('this is where the logic goes');
-        // }else{
-        //     console.log("Goodbye!");
-        // }
-        
     }
 
 

@@ -3,16 +3,115 @@ body{
 }
 
 .nav-section{
-    border: 1px solid red;
-    padding: 50px;
+    /* border: 1px solid red; */
+    padding: 10px;
     display: flex;
     justify-content: center;
+    background-color: transparent;
 }
 
 .nav-container{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 10px;
     display: flex;
     justify-content: space-between;
     min-width: 1100px;
 }
+
+.nav-logo{
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+
+.nav-about{
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding-top: 6px;
+}
+
+.nav-logo-container{
+    /* border: 1px solid red; */
+}
+
+.nav-about-container{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* =========================================================== */
+
+
+.icon-section{
+    /* border: 1px solid purple; */
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.icon-container{
+    /* border: 1px solid red; */
+    min-width: 1100px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.icon-grid-container{
+    /* border: 1px solid blue; */
+    min-width: 800px;
+    padding: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.icon{
+    background-color: white;
+    height: 100px;
+    width: 100px;
+}
+
+/* i want the entire page to have a bit of a shadow-y gradient. Like a a gentle light is being shone on the icons */
+
+
+
+/* ============================================================================= */
+
+
+
+.footer-section{
+    border: 1px solid red;
+    padding: 100px;
+    margin-top: 100px;
+}
+
+/* dont really feel like figuring out how to make this footer position correctly 100 percent of the time */
+
+
+
+
+/*  TODO LIST:  */
+/* 
+
+1.) Finish landing page ( how to make footer stick to bottom )
+
+2.) Create Logo and icon png's to be used
+
+3.) How do I link my logic to the site?
+
+4.) Game page
+
+5.) About page
+
+6.) Footer links
+
+*/
